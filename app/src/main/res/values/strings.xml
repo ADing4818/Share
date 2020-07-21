@@ -8,4 +8,10 @@
 
     <string name="app_name">Share</string>
 
+    <string-array name="item_preferences">
+        <item>Food</item>
+        <item>Clothing</item>
+        <item>Electronics</item>
+    </string-array>
+
 </resources>

@@ -4,6 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterOneActivity">
+    android:background="@drawable/background"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".RegisterOneActivity"
+    android:focusable="true">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:text="Register Your New Account"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="First Name"
+            android:inputType="text|textVisiblePassword"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/firstNameError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:textColor="@color/colorAccent"
+            android:alpha="0"
+            android:text="First name is required" />
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="Last Name"
+            android:inputType="text|textVisiblePassword"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/lastNameError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:textColor="@color/colorAccent"
+            android:alpha="0"
+            android:text="Last name is required" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="Email Address"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/emailAddressError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:textColor="@color/colorAccent"
+            android:alpha="0"
+            android:text="Email address is required" />
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="City"
+            android:inputType="text|textVisiblePassword"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/cityError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:textColor="@color/colorAccent"
+            android:alpha="0"
+            android:text="Name of city is required" />
+
+        <EditText
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="State"
+            android:inputType="text|textVisiblePassword"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#80FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/stateError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:textColor="@color/colorAccent"
+            android:alpha="0"
+            android:text="Name of state is required" />
+
+        <Button
+            android:id="@+id/nextRegister"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:onClick="nextPage"
+            android:text="Continue"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
