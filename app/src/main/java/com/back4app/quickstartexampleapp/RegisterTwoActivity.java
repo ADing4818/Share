@@ -21,12 +21,14 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import java.util.Objects;
+
 public class RegisterTwoActivity extends AppCompatActivity {
     EditText username;
     EditText password;
 
     Intent intent;
-    Intent intent_to_welcome_page;
+    Intent intent_to_items_page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,7 @@ public class RegisterTwoActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
 
         intent = getIntent();
-        intent_to_welcome_page = new Intent(getApplicationContext(), WelcomePage.class);
+        intent_to_items_page = new Intent(getApplicationContext(), ItemsPage.class);
 
         finishHideKeyboard(username);
         finishHideKeyboard(password);
@@ -65,30 +67,23 @@ public class RegisterTwoActivity extends AppCompatActivity {
     public void register(View v) {
         ParseUser new_user = new ParseUser();
 
-        /* Setting the user's username, password, and email in the "User" class */
+        /* Setting the user's information in the "User" class */
         new_user.setUsername(username.getText().toString());
         new_user.setPassword(password.getText().toString());
         new_user.setEmail(intent.getStringExtra("email address"));
+        new_user.put("username", username.getText().toString());
+        new_user.put("firstName", Objects.requireNonNull(intent.getStringExtra("first name")));
+        new_user.put("lastName", Objects.requireNonNull(intent.getStringExtra("last name")));
+        new_user.put("city", Objects.requireNonNull(intent.getStringExtra("city")));
+        new_user.put("state", Objects.requireNonNull(intent.getStringExtra("state")));
+        new_user.saveInBackground();
 
-        /* Adding the user's username, first name, last name, city, state to the "Info" class */
         new_user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
-                if (e == null) {
-                    ParseObject user_info = new ParseObject("Info");
-                    user_info.add("username", username.getText().toString());
-                    user_info.add("firstName", intent.getStringExtra("first name"));
-                    user_info.add("lastName", intent.getStringExtra("last name"));
-                    user_info.add("city", intent.getStringExtra("city"));
-                    user_info.add("state", intent.getStringExtra("state"));
-                    user_info.saveInBackground();
-
-                    startActivity(intent_to_welcome_page);
-                }
+                if (e == null) startActivity(intent_to_items_page);
                 /* Fix message below later */
-                else {
-                    Toast.makeText(RegisterTwoActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+                else Toast.makeText(RegisterTwoActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

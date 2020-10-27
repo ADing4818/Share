@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".RegisterTwoActivity">
+    tools:context=".WhereTo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,48 +20,32 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@android:dimen/app_icon_size"
+            android:layout_marginTop="@android:dimen/thumbnail_width"
             android:fontFamily="@font/poppins_light"
-            android:gravity="center"
-            android:text="Register Your New Account"
+            android:layout_gravity="center_horizontal"
+            android:text="Where To?"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="25sp" />
-
-        <EditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
-            android:fontFamily="@font/poppins_light"
-            android:gravity="center"
-            android:hint="Username"
-            android:inputType="text|textVisiblePassword"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#80FFFFFF"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp"
-            android:fontFamily="@font/poppins_light"
-            android:gravity="center"
-            android:hint="Password"
-            android:inputType="text|textPassword"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#80FFFFFF"
-            android:textSize="15sp" />
+            android:textSize="48sp" />
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/donators"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/button_round"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:text="Donators"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/receivers"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="40dp"
@@ -70,12 +54,11 @@
             android:background="@drawable/button_round"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
-            android:onClick="register"
-            android:text="Register"
+            android:text="Receivers"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
 
     </LinearLayout>
 

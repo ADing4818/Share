@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         message.show();
     }
 
-    /* Called in when the user signs in */
+    /* Called when the user signs in */
     public void sign_in(View v) {
         String username_string = username.getText().toString();
         String password_string = password.getText().toString();

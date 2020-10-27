@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomePage"></activity>
+        <activity android:name=".ItemsPage"></activity>
+        <activity android:name=".WhereTo" />
+        <activity android:name=".WelcomePage" />
         <activity android:name=".ResetPassword" />
         <activity android:name=".RegisterTwoActivity" />
         <activity android:name=".RegisterOneActivity" />

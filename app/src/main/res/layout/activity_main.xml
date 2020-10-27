@@ -38,7 +38,7 @@
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="40dp"
@@ -56,7 +56,7 @@
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="40dp"
@@ -74,7 +74,7 @@
         <Button
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="40dp"
@@ -99,12 +99,13 @@
             android:onClick="resetPassword"
             android:text="Forgot Password?"
             android:textAlignment="center" />
+
     </LinearLayout>
 
     <Button
         android:id="@+id/signup"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="10dp"
