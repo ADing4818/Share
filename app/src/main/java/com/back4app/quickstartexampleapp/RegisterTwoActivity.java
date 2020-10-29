@@ -30,6 +30,8 @@ public class RegisterTwoActivity extends AppCompatActivity {
     Intent intent;
     Intent intent_to_items_page;
 
+    HelperFunctions helper_functions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,27 +43,10 @@ public class RegisterTwoActivity extends AppCompatActivity {
         intent = getIntent();
         intent_to_items_page = new Intent(getApplicationContext(), ItemsPage.class);
 
-        finishHideKeyboard(username);
-        finishHideKeyboard(password);
-    }
+        helper_functions = new HelperFunctions(this);
 
-    /* From StackOverflow */
-    public void finishHideKeyboard(View v) {
-        v.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideKeyboard(v);
-                }
-            }
-        });
-    }
-
-    /* From StackOverflow */
-    public void hideKeyboard(View v) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        helper_functions.finishHideKeyboard(username);
+        helper_functions.finishHideKeyboard(password);
     }
 
     public void register(View v) {

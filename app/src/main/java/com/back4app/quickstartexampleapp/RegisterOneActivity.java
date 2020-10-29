@@ -34,6 +34,8 @@ public class RegisterOneActivity extends AppCompatActivity {
     TextView cityError;
     TextView stateError;
 
+    HelperFunctions helper_functions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,30 +55,13 @@ public class RegisterOneActivity extends AppCompatActivity {
         cityError = findViewById(R.id.cityError);
         stateError = findViewById(R.id.stateError);
 
-        finishHideKeyboard(firstName);
-        finishHideKeyboard(lastName);
-        finishHideKeyboard(email);
-        finishHideKeyboard(city);
-        finishHideKeyboard(state);
-    }
+        helper_functions = new HelperFunctions(this);
 
-    /* From StackOverflow */
-    public void finishHideKeyboard(View v) {
-        v.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideKeyboard(v);
-                }
-            }
-        });
-    }
-
-    /* From StackOverflow */
-    public void hideKeyboard(View v) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        helper_functions.finishHideKeyboard(firstName);
+        helper_functions.finishHideKeyboard(lastName);
+        helper_functions.finishHideKeyboard(email);
+        helper_functions.finishHideKeyboard(city);
+        helper_functions.finishHideKeyboard(state);
     }
 
     public void nextPage(View v) {

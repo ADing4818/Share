@@ -30,6 +30,8 @@ public class ItemsPage extends AppCompatActivity {
     TextView receive_counter;
     TextView donate_counter;
 
+    HelperFunctions helper_functions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,8 @@ public class ItemsPage extends AppCompatActivity {
 
         receive_counter = findViewById(R.id.receive_counter);
         donate_counter = findViewById(R.id.donate_counter);
+
+        helper_functions = new HelperFunctions(this);
 
         /* Setting up a TextWatcher to show the number of characters the user is up to */
         TextWatcher receive_counter_watcher = new TextWatcher() {
@@ -86,7 +90,6 @@ public class ItemsPage extends AppCompatActivity {
                 receive_textBox.setCursorVisible(true);
             }
         });
-
         donate_textBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,27 +97,8 @@ public class ItemsPage extends AppCompatActivity {
             }
         });
 
-        finishHideKeyboard(receive_textBox);
-        finishHideKeyboard(donate_textBox);
-    }
-
-    /* From StackOverflow */
-    public void finishHideKeyboard(View v) {
-        v.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideKeyboard(v);
-                }
-            }
-        });
-    }
-
-    /* From StackOverflow */
-    public void hideKeyboard(View v) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        helper_functions.finishHideKeyboard(receive_textBox);
+        helper_functions.finishHideKeyboard(donate_textBox);
     }
 
     public void toWelcome(View v) {

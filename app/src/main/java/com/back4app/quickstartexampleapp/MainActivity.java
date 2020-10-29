@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity {
     Intent intent_register_one;
     Intent reset_password;
 
+
     EditText username;
     EditText password;
+
+    HelperFunctions helper_functions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,29 +46,11 @@ public class MainActivity extends AppCompatActivity {
         reset_password = new Intent(getApplicationContext(), ResetPassword.class);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
+        helper_functions = new HelperFunctions(this);
 
         /* Hiding soft keyboard */
-        finishHideKeyboard(username);
-        finishHideKeyboard(password);
-    }
-
-    /* From StackOverflow */
-    public void finishHideKeyboard(View v) {
-        v.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideKeyboard(v);
-                }
-            }
-        });
-    }
-
-    /* From StackOverflow */
-    public void hideKeyboard(View v) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        helper_functions.finishHideKeyboard(username);
+        helper_functions.finishHideKeyboard(password);
     }
 
     /* When clicked, the user goes to the first out of two registration pages. */
